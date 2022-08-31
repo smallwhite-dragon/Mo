@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1379</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>AI Cam view</string>
+  </property>
+  <widget class="QLabel" name="image_label_2">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>170</y>
+     <width>661</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>照片</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>640</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>可信度:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rate">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>630</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>###</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="control_bt">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>640</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Adobe Devanagari&quot;;</string>
+   </property>
+   <property name="text">
+    <string>开启相机</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="capture_bt">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>640</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Adobe Devanagari&quot;;</string>
+   </property>
+   <property name="text">
+    <string>手动AI检测</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="image_label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>641</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Bahnschrift</family>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string>摄像头</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="error_bt">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>640</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>12</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Adobe Devanagari&quot;;</string>
+   </property>
+   <property name="text">
+    <string>自学习</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>680</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>耗时（ms）:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="timems">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>670</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>###</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>30</y>
+     <width>211</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 255, 0);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Label：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>电池：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="huximo_num">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 127);</string>
+    </property>
+    <property name="text">
+     <string>#</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dianchi_num">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 127);</string>
+    </property>
+    <property name="text">
+     <string>#</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="okng">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>20</y>
+     <width>211</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>52</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>NG</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="newcode">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>100</y>
+     <width>641</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>271</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::ActionsContextMenu</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;黑体&quot;;
+</string>
+   </property>
+   <property name="currentText">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="model_name">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>40</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);
+font: 14pt &quot;Adobe Devanagari&quot;;
+font: 12pt &quot;黑体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>请务必与工程师现场确认机种名称！</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_reelect">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>30</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11pt &quot;思源黑体 CN Bold&quot;;
+background-color: rgb(170, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>重选</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="BIS_okng">
+   <property name="geometry">
+    <rect>
+     <x>970</x>
+     <y>110</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>BIS上传失败</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="result_1">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>60</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>21</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>检测结果</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>630</y>
+     <width>461</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>隶书</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Label-AI检测系统-V1.00</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

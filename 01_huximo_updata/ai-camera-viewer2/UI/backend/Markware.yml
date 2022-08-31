@@ -1,0 +1,58 @@
+#接口
+interface:
+  plc:
+    type: com #com
+    com:
+      port: COM1
+      baud: 9600 #波特率
+      data: 8 #数据位
+      stop: 1 #停止位
+      parity: N #校验位 'N', 'E', 'O', 'M', 'S'
+  merlinii:
+    type: socket #socket/com
+    socket:
+      ip: 127.0.0.1
+      port: 2000
+  input_scan:
+    type: usb #usb/com
+  dbl_check_scan:
+    type: usb #usb/com
+  mssql:
+    database: 'vdc print'
+    host: '192.168.2.100\SQLEXPRESS'
+    port: 1433
+    user: 'sa'
+    password: 'root'
+#模板
+templetes:
+  pattern1一汽:
+    static_length: 10
+    static_content: tt
+    is_code_send: true
+    is_db_check_scan: true #是否复扫
+    src: D:\Telesis\Laser\Merlin\Patterns\Untitled.TTP
+    code_row: 4
+    split: #截取位置，0为第一位
+      1: [1,3] #第一行
+      2: [2,4] #第二行
+      3: [3,5] #第三行
+  pattern2:
+    static_length: 10
+    static_content: 10
+    is_code_send: true
+    is_db_check_scan: true #是否复扫
+    src: c://34343/343
+    code_row: 4
+    split: #截取位置，从0开始为第一位
+    - [1,2]
+    - [1,2]
+    - [1,2]
+#日志
+log:
+  file: c://34343/343 #日志文件存储位置
+#用户（保留）
+
+
+
+
+

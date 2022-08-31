@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file>../img/ok_70.8px.png</file>
+        <file>../img/nok_70.8px.png</file>
+    </qresource>
+</RCC>
